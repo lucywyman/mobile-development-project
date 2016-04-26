@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/action_settings"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <CheckBoxPreference
+        android:key="pref_sync"
+        android:title="First Setting"
+        android:summary="This is a setting"
+        android:defaultValue="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <CheckBoxPreference
+        android:key="pref_sync"
+        android:title="Second Setting"
+        android:summary="This is another setting"
+        android:defaultValue="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</PreferenceScreen>
