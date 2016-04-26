@@ -9,6 +9,17 @@ import java.util.List;
  */
 public class SettingsActivity extends PreferenceActivity {
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        addPreferencesFromResource(R.xml.settings);
+    }
+
+/*    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.xml.settings);
+    }
+    @Override
     public void onBuildHeaders(List<Header> target)
     {
         loadHeadersFromResource(R.xml.settings_headers, target);
@@ -16,6 +27,6 @@ public class SettingsActivity extends PreferenceActivity {
     @Override
     protected boolean isValidFragment(String fragmentName) {
         return SettingsFragment.class.getName().equals(fragmentName);
-    }
+    }*/
 }
 

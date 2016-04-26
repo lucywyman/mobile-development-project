@@ -1,11 +1,30 @@
 package com.example.lucy.buddysystem;
 
+import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Intent;
+import android.support.v7.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Toolbar toolbar;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        if(toolbar != null) {
+            setSupportActionBar(toolbar);
+            getSupportActionBar().setTitle("Buddy System");
+            getSupportActionBar().setHomeButtonEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+        toolbar.inflateMenu(R.menu.menu_main);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
