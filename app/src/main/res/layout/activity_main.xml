@@ -4,46 +4,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.sehci.tutorialphotoshoot.MainActivity">
-
-    <!--&lt;!&ndash; This DrawerLayout has two children at the root  &ndash;&gt;-->
-    <!--<android.support.v4.widget.DrawerLayout-->
-    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
-    <!--android:id="@+id/drawer_layout"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent">-->
-
-    <!-- This LinearLayout represents the contents of the screen  -->
-    <LinearLayout
+    <!-- The ActionBar displayed at the top -->
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" />
 
-        <!-- The ActionBar displayed at the top -->
-        <include
-            layout="@layout/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/messages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/toolbar"
+        android:layout_below="@+id/toolbar"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@android:drawable/ic_dialog_email" />
 
-        <TextView
-            android:layout_below="@+id/tool_bar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="50dp"
-            android:text="Hello world!" />
-    </LinearLayout>
-
-    <!--       &lt;!&ndash; The navigation drawer that comes from the left &ndash;&gt;
-           &lt;!&ndash; Note that `android:layout_gravity` needs to be set to 'start' &ndash;&gt;
-           <android.support.design.widget.NavigationView
-               android:id="@+id/nvView"
-               android:layout_width="wrap_content"
-               android:layout_height="match_parent"
-               android:layout_gravity="start"
-               android:background="@android:color/white"
-               app:menu="@menu/menu_main" />
-       </android.support.v4.widget.DrawerLayout>-->
-
+    <Switch
+        android:id="@+id/bluetooth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/fab_margin" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Turn on Bluetooth"
+        android:layout_below="@+id/bluetooth"
+        android:layout_alignParentRight="true"
+        android:textSize="20dp"/>
 
 </RelativeLayout>
 
