@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <item
+        android:id="@+id/messages"
+        android:title="Messages" />
+
+    <item
+        android:id="@+id/search"
+        android:title="Buddy Search" />
+    <item
+        android:id="@+id/walk"
+        android:title="My Walk" />
+    <item
+        android:id="@+id/contacts"
+        android:title="My Buddies" />
+    <item
+        android:id="@+id/settings"
+        android:title="@string/action_settings" />
+
+</menu>
