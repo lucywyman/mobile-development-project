@@ -15,7 +15,7 @@ import com.example.lucy.buddysystem.common.logger.MessageOnlyLogFilter;
 
 public class BluetoothActivity extends SampleActivityBase {
 
-    public static final String TAG = "MainActivity";
+    public static final String TAG = "BluetoothActivity";
 
     // Whether the Log Fragment is currently shown
     private boolean mLogShown;
@@ -23,7 +23,7 @@ public class BluetoothActivity extends SampleActivityBase {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.bluetooth_activity);
 
         if (savedInstanceState == null) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -35,7 +35,7 @@ public class BluetoothActivity extends SampleActivityBase {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.bluetooth_menu, menu);
         return true;
     }
 

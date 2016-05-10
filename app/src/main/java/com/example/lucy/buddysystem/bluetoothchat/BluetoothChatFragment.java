@@ -165,7 +165,7 @@ public class BluetoothChatFragment extends Fragment {
             }
         });
 
-        // Initialize the BluetoothChatService to perform bluetooth connections
+        // Initialize the BluetoothChatService to perform bluetooth_menu connections
         mChatService = new BluetoothChatService(getActivity(), mHandler);
 
         // Initialize the buffer for outgoing messages
