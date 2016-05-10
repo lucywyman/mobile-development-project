@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -56,9 +55,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(settingsIntent, 1);
                 return true;
             case R.id.contacts:
-                return true;
+                Intent contactIntent = new Intent(this, ContactActivity.class);
+                startActivityForResult(contactIntent, 2);
             case R.id.messages:
                 return true;
+            case R.id.bluetooth:
+                Intent bluetoothIntent = new Intent(this, BluetoothActivity.class);
+                startActivityForResult(bluetoothIntent, 3);
         }
         return (super.onOptionsItemSelected(item));
     }
