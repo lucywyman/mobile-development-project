@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- The ActionBar displayed at the top -->
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/messages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/toolbar"
+        android:layout_below="@+id/toolbar"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@android:drawable/ic_dialog_email" />
+
+    <TextView
+        android:id="@+id/bluetooth_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bluetooth_label"
+        android:layout_below="@+id/toolbar"
+        android:layout_alignParentEnd="true"
+        android:textSize="@dimen/mid_text_size"
+        android:layout_margin="@dimen/fab_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"/>
+
+    <Switch
+        android:id="@+id/bluetooth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bluetooth_text"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/fab_margin" />
+
+    // TODO real map
+    <ImageView
+        android:id="@+id/main_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/messages"
+        android:src="@drawable/mapscreenshot"/>
+
+    // TODO bluetooth messages
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/main_map">
+
+    <TextView
+        android:id="@+id/title_paired_devices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#666"
+        android:paddingLeft="5dp"
+        android:text="@string/title_paired_devices"
+        android:textColor="#fff"
+        android:visibility="gone"
+        />
+
+    <ListView
+        android:id="@+id/paired_devices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:stackFromBottom="true"
+        />
+
+    <TextView
+        android:id="@+id/title_new_devices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#666"
+        android:paddingLeft="5dp"
+        android:text="@string/title_other_devices"
+        android:textColor="#fff"
+        android:visibility="gone"
+        />
+
+    <ListView
+        android:id="@+id/new_devices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:stackFromBottom="true"
+        />
+
+    <Button
+        android:id="@+id/button_scan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_scan"
+        />
+    </LinearLayout>
+</RelativeLayout>
+

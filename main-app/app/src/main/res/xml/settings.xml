@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/action_settings"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    // TODO toolbar?
+    <EditTextPreference
+        android:key="scope"
+        android:title="People near you"
+        android:summary="How far from your current location do you want to look for a walking buddy?"
+        android:defaultValue="10"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ListPreference
+        android:key="whoCanSee"
+        android:title="Who can see you?"
+        android:summary=""
+        android:defaultValue="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</PreferenceScreen>
