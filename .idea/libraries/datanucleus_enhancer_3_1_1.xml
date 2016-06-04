@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="datanucleus-enhancer-3.1.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.datanucleus/datanucleus-enhancer/3.1.1/b141c67d55cc19f14639f091b84e692e2198dc50/datanucleus-enhancer-3.1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.datanucleus/datanucleus-enhancer/3.1.1/e212a2f7001d9a28c91b39427ed010cb696ad3e/datanucleus-enhancer-3.1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

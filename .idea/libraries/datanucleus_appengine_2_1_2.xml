@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="datanucleus-appengine-2.1.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.appengine.orm/datanucleus-appengine/2.1.2/c94b27586d50c55ab7dd54ee2174282e6a1e96a6/datanucleus-appengine-2.1.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.appengine.orm/datanucleus-appengine/2.1.2/cff3ed955bc57fea6762019509369c10fedd947f/datanucleus-appengine-2.1.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
