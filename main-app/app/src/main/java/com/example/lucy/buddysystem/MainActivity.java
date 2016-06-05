@@ -27,16 +27,12 @@ public class MainActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
     private Date sundown;
+    private String sunsetstr = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        DateFormat df = new SimpleDateFormat("h:mm:ss a");
-        Date sunsetdate = getSundown(this);
-        String sunset = "Sunset today is at " + df.format(sunsetdate);
-        TextView myTextView= (TextView) findViewById(R.id.myTextView);
-        myTextView.setText(sunset);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         if(toolbar != null) {
@@ -48,12 +44,10 @@ public class MainActivity extends AppCompatActivity {
         if (toolbar != null) {
             toolbar.inflateMenu(R.menu.menu_main);
         }
-
-        sundown = getSundown(MainActivity.this);
-        new SundownNotifier(this).execute(sundown);
+        getSundown(this);
     }
 
-    private Date getSundown(Context context) {
+    private void getSundown(final Context context) {
         RequestQueue queue = Volley.newRequestQueue(context);
         String url ="http://api.sunrise-sunset.org/json?lat=36.7201600&lng=-4.4203400&date=today";
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
@@ -66,18 +60,27 @@ public class MainActivity extends AppCompatActivity {
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-                        String sunset = null;
+                        JSONObject results = null;
                         try {
-                            sunset = json.getString("sunset");
+                            results = json.getJSONObject("results");
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        try {
+                            sunsetstr = results.getString("sunset");
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
                         DateFormat df = new SimpleDateFormat("h:mm:ss a");
                         try {
-                            sundown = df.parse(sunset);
+                            sundown = df.parse(sunsetstr);
                         } catch (ParseException e) {
                             e.printStackTrace();
                         }
+                        new SundownNotifier(context).execute(sundown);
+                        String sunsetstr = "Sunset today is at " + df.format(sundown);
+                        TextView myTextView= (TextView) findViewById(R.id.myTextView);
+                        myTextView.setText(sunsetstr);
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -86,9 +89,7 @@ public class MainActivity extends AppCompatActivity {
         });
         // Add the request to the RequestQueue.
         queue.add(stringRequest);
-        return sundown;
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

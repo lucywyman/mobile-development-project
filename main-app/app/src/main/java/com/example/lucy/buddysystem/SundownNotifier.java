@@ -6,6 +6,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.support.v4.app.NotificationCompat;
 import android.app.NotificationManager;
+import android.graphics.Color;
 import java.util.Date;
 
 public class SundownNotifier extends AsyncTask<Date, Void, Void> {
@@ -32,8 +33,8 @@ public class SundownNotifier extends AsyncTask<Date, Void, Void> {
                             .setSmallIcon(R.drawable.ic_launcher)
                             .setContentTitle("It's getting dark")
                             .setContentText("Find a buddy!")
+                            .setLights(Color.CYAN, 1000, 1000)
                             .setAutoCancel(true);
-
             builder.setContentIntent(contentIntent);
             // Add as notification
             NotificationManager manager = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);

@@ -13,27 +13,10 @@
         android:layout_alignParentTop="true" />
 
     <TextView
-        android:id="@+id/bluetooth_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/bluetooth_label"
-        android:layout_below="@+id/toolbar"
-        android:layout_alignParentEnd="true"
-        android:textSize="@dimen/mid_text_size"
-        android:layout_margin="@dimen/fab_margin"
-        android:layout_marginBottom="@dimen/activity_vertical_margin"/>
-
-    <Switch
-        android:id="@+id/bluetooth"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/bluetooth_text"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="@dimen/fab_margin" />
-    <TextView
         android:id="@+id/myTextView"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
         />
 
     // TODO real map
